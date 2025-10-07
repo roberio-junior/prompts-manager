@@ -1,0 +1,154 @@
+:root {
+  --white: #ffffff;
+
+  --accent-600: #4863f7;
+  --accent-500: #7878d7;
+
+  --alert-600: #ff5c5c;
+
+  --gray-900: #0d0d0d;
+  --gray-800: #111111;
+  --gray-700: #1a1a1a;
+  --gray-200: #424242;
+  --gray-100: #737373;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--gray-100);
+}
+
+body {
+  background-color: var(--gray-900);
+  color: var(--white);
+  font-family: "Inter", sans-serif;
+}
+
+input,
+button {
+  font-family: "Inter", sans-serif;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* faz com que o .main ocupe todo o espaço disponível ao lado da sidebar. */
+  padding: 62px 124px;
+  gap: 32px; /* Espaçamento entre os elementos filhos */
+  overflow-y: scroll;
+}
+
+/* Main header styles */
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Button styles */
+.btn {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 0.5px solid var(--gray-200);
+  padding: 0 16px;
+  transition: background 0.5s;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.btn-outline:hover {
+  background: var(--gray-200);
+}
+
+.btn-primary {
+  background: var(--accent-600);
+  color: var(--white);
+  border: 1px solid var(--accent-500);
+  padding: 0 24px;
+  transition: opacity 0.5s;
+}
+
+.btn-primary:hover {
+  opacity: 0.8;
+}
+
+.w-150 {
+  min-width: 150px;
+  justify-content: center;
+}
+
+/* Prompt title styles */
+.prompt-title {
+  font-size: 32px;
+  font-weight: 600;
+  outline: none;
+}
+
+/* Prompt content styles */
+.prompt-content {
+  font-size: 16px;
+  color: var(--white);
+  outline: none;
+  line-height: 32px;
+}
+
+.editable-wrapper {
+  position: relative;
+}
+
+.editable-wrapper::before {
+  content: attr(data-placeholder);
+  position: absolute;
+  color: var(--gray-200);
+  pointer-events: none;
+  opacity: 0;
+}
+.editable-wrapper:empty::before {
+  opacity: 1;
+}
+
+#title-wrapper.is-empty{
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--gray-200);
+}
+
+#content-wrapper.is-empty{
+  font-size: 16px;
+  color: var(--gray-200);
+}
