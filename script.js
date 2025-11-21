@@ -43,13 +43,13 @@ function attachAllEditableHandlers() {
 }
 
 function openSidebar() {
-  elements.sidebar.style.display = "flex"
-  elements.btnOpen.style.display = "none"
+  elements.sidebar.classList.add("open")
+  elements.sidebar.classList.remove("collapsed")
 }
 
 function closeSidebar() {
-  elements.sidebar.style.display = "none"
-  elements.btnOpen.style.display = "block"
+  elements.sidebar.classList.remove("open")
+  elements.sidebar.classList.add("collapsed")
 }
 
 function save() {
@@ -145,7 +145,7 @@ function newPrompt(){
   elements.promptTitle.focus()
 }
 
-function copySelectd(){
+function copySelected(){
   try {
     const content = elements.promptContent
     if(!navigator.clipboard) {
@@ -199,8 +199,10 @@ function init() {
   renderList("")
   attachAllEditableHandlers()
   updateAllEditableStates()
-  elements.sidebar.style.display = ""
-  elements.btnOpen.style.display = "none"
+
+  elements.sidebar.classList.remove("open")
+  elements.sidebar.classList.remove("collapsed")
+
   elements.btnOpen.addEventListener("click", openSidebar)
   elements.btnCollapse.addEventListener("click", closeSidebar)
 }
