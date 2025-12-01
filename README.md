@@ -54,5 +54,3 @@ cd prompts-manager
 3. Abra o arquivo **index.html** no navegador.
 
 Não é necessário instalar dependências ou rodar servidor.
-
----
